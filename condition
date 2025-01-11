@@ -1,0 +1,91 @@
+Switch case :
+Syntax :
+switch(variable/expression){
+   case value1:
+    break;
+   case value2:
+    break;
+   default:
+    print statement
+}
+ex: 1. to check whether the number is positive or negative
+ program:
+        let num = prompt("Enter a number")
+        switch(num){
+            case num>0:
+                document.write("number is positive")
+                break;
+            case num==0:
+                document.write("number is zero")  
+                break;
+            case num<0 :
+                document.write("number is negative")
+                break;
+            default:
+                document.write("invalid input")          
+        }
+2. to check the day is weekday or weekend day
+ program :
+        let day = prompt("Enter a day of the week")
+        switch(day){
+            case "monday":
+            case "tuesday":
+            case "wednesday":
+            case "thursday":
+            case "friday":
+                document.write("It is a week day","<br>")
+                break;
+            case "saturday":
+            case "sunday":
+                document.write("It is a weekend day","<br>")
+                break;
+            default:
+                document.write("invalid day")                        
+        }
+
+Difference between conditional statements and loops :
+ conditional statements : block of code which only executes one time if the condition is true
+ loops : execute the block of code several times
+Question : Electricity bill
+Shaik Meera sir asked the students to help calculate the electricity bill for a household. The electricity company charges different rates based on the number of units used. The charges per unit for different ranges are:
+• For the first 50 units (0-50): 2 per unit.
+• For the next 100 units (51-150): 3 per unit.
+• For the next 100 units (151-250): 5 per unit.
+• For units above 250 (251 and above): 8 per unit.
+After calculating the total charge, an additional 20% of the total amount is added to the bill. Task: Write a program that reads the number of units used and calculates the total electricity bill.
+Input:
+• The input will be a single number representing the units of electricity used.
+Output:
+• The output should be the total bill amount, including the additional 20% charge.
+// for 200 units -780 bill, for 350 units - 2040 bill
+//  for 280 units
+50 * 2 = 100
+100* 3 = 300
+100 * 5 = 500
+30* 8 = 240
+BILL = 1140
+sub charge = 0.2 * 1140 = 228
+total = bill + subcharge = 1140+ 228 = 1368
+// for 210
+50 - 100
+100 - 300
+60 - 300
+ 700 * 0.2 = 140
+total = 700 + 140 = 840
+program :
+let units = parseInt(prompt("Enter the number of units used"));
+let bill = 0;
+if (units <= 50) {
+    bill = units * 2;
+} else if (units <= 150) {
+    bill = 50 * 2 + (units - 50) * 3;
+} else if (units <= 250) {
+    bill = (50 * 2 )+ 100 * 3 + (units - 150) * 5;
+} else {
+    bill = (50 * 2) + (100 * 3) + (100 * 5) + (units - 250) * 8;
+}
+
+bill = bill + (bill * 20) / 100;
+document.write("The total electricity bill is: " + bill);
+
+ 
